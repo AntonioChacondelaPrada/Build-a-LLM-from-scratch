@@ -1,6 +1,6 @@
 import re
 
-class SimpleTokenizer2:
+class SimpleTokenizer1:
     def __init__(self, vocab):
         #stores the vocabulary as a class attribute for access in the encode and decode methods
         self.str_to_int =  vocab
@@ -21,3 +21,9 @@ class SimpleTokenizer2:
         #Removes spaces before the specified punctiation
         text = re.sub(r'\s+([,.?!"()\'])', r'\l', text)
         return text
+
+
+tokenizer = SimpleTokenizer1(vocab)
+text = """"It's the last he painted, you know,"Mrs. Gisburn said with pardonable pride."""
+ids = tokenizer.encode(text)
+print(ids)
